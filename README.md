@@ -1,21 +1,25 @@
 
 # URL-Shortner
 
+URL Shortner API build on ruby on rails. We can run rake tasks to check API behaviour.
+
+
+
 ## How to test the code
 
-  
+After cloning the repo, follow below instructions:
 
 ### Open terminal and on the first terminalexecute following commands.
 ```bash
-$ bundle exec rake db:create db:migrate db:setup
-$ bundle exec rails server
+$ rails db:create db:migrate db:setup
+$ rails server
 ```
 
 ### Open another terminal and on the second terminalexecute following commands.
 
 On running rake taks `encode` it will print the short_url related to original_url.
 ```
-rake app:encode URL=https://bigbinary.com/jobs
+URL=https://bigbinary.com/jobs bundle exec rake app:encode
 ```
 The above rake task will print following statement in the terminal.
 
