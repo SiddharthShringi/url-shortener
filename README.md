@@ -29,7 +29,7 @@ SHORTURL=https://short.is/TLU31jRT bundle exec rake app:decode
 
 ```
 
-The above task should print following statemetn in the terminal.
+The above rake task will print following statement in the terminal.
 
 ```
 The original url of short url https://short.is/TLU31jRT is https://bigbinary.com/jobs
