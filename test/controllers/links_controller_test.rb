@@ -19,7 +19,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show original url" do
-    get short_url_path(links(:one).short_url)
+    get link_path(links(:one).short_url)
     assert_response :ok
     assert_equal links(:one).url, json_body["url"]
   end
