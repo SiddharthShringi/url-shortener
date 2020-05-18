@@ -6,7 +6,7 @@ namespace :app do
   desc "GET SHORT URL"
   task encode: :environment do 
     url = ENV['URL']
-    session.post("https://localhost:3000#{routes.links_path}", params: {
+    session.post("https://localhost:3000#{routes.encode_api_v1_links_path}", params: {
       link: { url: url}
     })
     response = JSON.parse(session.response.body)
@@ -18,7 +18,7 @@ namespace :app do
   task decode: :environment do
     input = ENV['SHORTURL']
     short_url = input[input.length-8, input.length]
-    res = session.get "https://localhost:3000#{routes.link_path(short_url)}"
+    res = session.get "https://localhost:3000#{routes.decode_api_v1_link_path(short_url)}"
     response = JSON.parse(session.response.body)
     if res == 404
       puts "No original url was found for the  short url #{input}."

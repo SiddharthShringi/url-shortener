@@ -1,12 +1,10 @@
-class LinksController < ApplicationController
+class Api::V1::LinksController < ApplicationController
 
-  def show
-    @link = Link.find_by!(short_url: params[:short_url])
-    render status: :ok, json: { url: @link.url }
-
+  def index
+    @links = Link.all
   end
 
-  def create
+  def encode
     @link = Link.find_or_initialize_by(link_params)
     if @link.new_record?
       @link.short_url = @link.generate_short_url
@@ -18,6 +16,11 @@ class LinksController < ApplicationController
     else
       render status: :ok, json: { short_url: @link.short_url }
     end
+  end
+
+  def decode
+    @link = Link.find_by!(short_url: params[:short_url])
+    render status: :ok, json: { url: @link.url }      
   end
 
   private
