@@ -1,14 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Links from "./Links";
+import Navbar from "./Navbar";
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1 className="text-primary">Bootstrap Working</h1>
-        <p>Start working on the app asap</p>
-        <span className="ml-3">
-          <i class="fas fa-thumbtack"></i>
-        </span>
+      <div className="container mt-6">
+        <Links />
       </div>
     );
   }

@@ -6,8 +6,8 @@ namespace :app do
   desc "GET SHORT URL"
   task encode: :environment do 
     url = ENV['URL']
-    session.post("https://localhost:3000#{routes.encode_api_v1_links_path}", params: {
-      link: { url: url}
+    session.post("http://localhost:3000#{routes.encode_api_v1_links_path}", params: {
+      link: { url: url }
     })
     response = JSON.parse(session.response.body)
     short_url = response["short_url"]
