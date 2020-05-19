@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Links from "./Links";
 import Navbar from "./Navbar";
 class App extends React.Component {
