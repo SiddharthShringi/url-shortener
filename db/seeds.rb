@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 links_attributes= [
-  {url: "https://bigbinary.com/jobs"},
-  {url: "https://yahoo.com"},
-  {url: "https://hello.com/jobs"},
-  {url: "https://facbook.com/jobs"},
-  {url: "https://google.com/jobs"},
-  {url: "https://hello.com/jobs"},
-  {url: "https://hello.com/jobs"}
+  {url: "https://bigbinary.com/jobs", short_url:"IGjn98Ty"},
+  {url: "https://yahoo.com", short_url:"IGjn9rTy"},
+  {url: "https://hello.com/jobs", short_url:"IGh47dTy"},
+  {url: "https://facbook.com/jobs", short_url:"o8jn98xc"},
+  {url: "https://google.com/jobs", short_url:"0jin96Py"},
+  {url: "https://hello.com/jobs", short_url:"KJ7IG8Ty"},
+  {url: "https://hello.com/jobs", short_url:"8Ih6l0Ty"}
 ]
 
 
