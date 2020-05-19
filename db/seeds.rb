@@ -17,6 +17,6 @@ links_attributes= [
 ]
 
 
-link_attributes.each do |attributes|
+links_attributes.each do |attributes|
   Link.create(attributes)
 end
