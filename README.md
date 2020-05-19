@@ -91,11 +91,19 @@ No original url was found for the short url https://short.is/poliwe71
 
 ```
 
-## List of Links View(Assignment-2)
+## List of Links View
 
 - Each link object has `pinned` boolean field which is false by default. All the Links are ordered according to two model field `pinned` and `created_at`.
 - We can pin or unpin the particular link.
 - All the pinned links will be moved to top on the list.
 - App is live [here](https://url-shortner-siddharth-shringi.herokuapp.com)
 
-
+API
+- Get the original url
+  - GET - /api/v1/links/:short_url/decode
+- Get the short_url
+  - POST - /api/v1/links/encode
+- Get the list of links
+  - GET - /api/v1/links
+- Update a particualr link(for pin functionality)
+  - PUT - /api/v1/links/:short_url
