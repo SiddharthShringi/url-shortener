@@ -29,7 +29,7 @@ class Api::V1::LinksController < ApplicationController
 
   def update
     @link = Link.find_by!(short_url: params[:short_url])
-    if @link.update!(link_params)
+    if @link.update(link_params)
       links = Link.order(pinned: :desc, created_at: :desc)
       render status: :ok, json: { links: links }
     else
