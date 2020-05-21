@@ -18,6 +18,14 @@ class Links extends React.Component {
     });
   }
 
+  handleShortUrlClick(short_url) {
+    axios.get(`api/v1/links/${short_url}/decode`).then((res) => {
+      this.setState({ links: res.data.links }, () => {
+        window.open(res.data.url, "_blank");
+      });
+    });
+  }
+
   handlePin = (short_url, pinned) => {
     let payload = {
       link: {
@@ -46,6 +54,7 @@ class Links extends React.Component {
                   <th scope="col"></th>
                   <th scope="col">Original Url</th>
                   <th scope="col">Short Url</th>
+                  <th scope="col">Count</th>
                 </tr>
               </thead>
               <tbody>
@@ -78,7 +87,15 @@ class Links extends React.Component {
                           )}
                         </th>
                         <td>{link.url}</td>
-                        <td>https://short.is/{link.short_url}</td>
+                        <td
+                          onClick={() =>
+                            this.handleShortUrlClick(link.short_url)
+                          }
+                          className="text-primary pointer"
+                        >
+                          {`${window.location.href}${link.short_url}`}
+                        </td>
+                        <td>{link.count}</td>
                       </tr>
                     );
                   })}
