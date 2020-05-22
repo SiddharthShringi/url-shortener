@@ -1,0 +1,3 @@
+my_first_job:
+  cron: "*/1 * * * *" #it will send email every 1 minute
+  class: "ReportJob"

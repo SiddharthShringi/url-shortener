@@ -38,6 +38,10 @@ gem 'sqlite3', '~> 1.4', :group => [:development, :test]
 
 gem 'pg', :group => [:production]
 
+gem 'sidekiq'
+
+# scheduling background job
+gem 'sidekiq-cron'
 
 
 group :development, :test do
